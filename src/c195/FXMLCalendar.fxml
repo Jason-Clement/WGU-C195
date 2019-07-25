@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c195.FXMLCalendarController">
+  <children>
+    <AnchorPane id="AnchorPane" fx:id="monthPane" prefHeight="400.5" prefWidth="601.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+            <Label fx:id="monthHeading" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="35.0" text="Label" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+        <GridPane alignment="CENTER" gridLinesVisible="false" maxHeight="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+          <children>
+            <Label text="Sunday" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+              <font>
+                <Font name="System Bold" size="12.0" fx:id="x1" />
+              </font>
+              <GridPane.margin>
+                <Insets />
+              </GridPane.margin>
+            </Label>
+            <Label font="$x1" text="Monday" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label font="$x1" text="Tuesday" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label font="$x1" text="Wednesday" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label font="$x1" text="Thursday" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label font="$x1" text="Friday" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label font="$x1" text="Saturday" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane fx:id="monthGrid" gridLinesVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+          <columnConstraints>
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+          <children>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#viewByWeekActivated" style="-fx-padding: 1 5;" text="View by Week" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#newAppointmentActivated" style="-fx-padding: 1 5;" text="New Appointment" />
+          </children>
+        </HBox>
+        <Button id="weekNextActivated" mnemonicParsing="false" onAction="#monthNextActivated" style="-fx-padding: 2 7;" text="&gt;" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0" />
+        <Button id="weekPrevActivated" mnemonicParsing="false" onAction="#monthPrevActivated" style="-fx-padding: 2 7;" text="&lt;" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="weekPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <VBox id="VBox" alignment="TOP_LEFT" spacing="0.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+          <children>
+            <Label fx:id="weekHeader1" alignment="CENTER" contentDisplay="CENTER" text="Sunday" VBox.vgrow="NEVER">
+              <font>
+                <Font name="System Bold" size="14.0" fx:id="x2" />
+              </font>
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+            </Label>
+            <Separator prefWidth="-1.0" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent1" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="weekHeader2" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x2" text="Monday" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Label>
+            <Separator prefWidth="-1.0" VBox.vgrow="NEVER" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent2" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="weekHeader3" alignment="CENTER" contentDisplay="CENTER" font="$x2" text="Tuesday" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Label>
+            <Separator prefWidth="-1.0" VBox.vgrow="NEVER" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent3" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="weekHeader4" alignment="CENTER" contentDisplay="CENTER" font="$x2" text="Wednesday" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Label>
+            <Separator prefWidth="-1.0" VBox.vgrow="NEVER" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent4" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="weekHeader5" alignment="CENTER" contentDisplay="CENTER" font="$x2" text="Thursday" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Label>
+            <Separator prefWidth="-1.0" VBox.vgrow="NEVER" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent5" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="weekHeader6" alignment="CENTER" contentDisplay="CENTER" font="$x2" text="Friday" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Label>
+            <Separator prefWidth="-1.0" VBox.vgrow="NEVER" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent6" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="weekHeader7" alignment="CENTER" contentDisplay="CENTER" font="$x2" text="Saturday" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin></Label>
+            <Separator prefWidth="-1.0" VBox.vgrow="NEVER" />
+            <ScrollPane id="ScrollPane" prefViewportHeight="50.0" prefViewportWidth="600.0" style="-fx-border-width: 0;&#10;-fx-background-color: transparent;">
+              <content>
+                <TilePane id="weekPane1" fx:id="weekContent7" maxWidth="-1.0" prefColumns="2" prefHeight="-1.0" prefRows="-1" prefWidth="-1.0" tileAlignment="TOP_LEFT" />
+              </content>
+            </ScrollPane>
+          </children>
+        </VBox>
+        <HBox id="HBox" alignment="CENTER" prefWidth="-1.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+          <children>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#viewByMonthActivated" style="-fx-padding: 1 5;" text="View by Month" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#newAppointmentActivated" style="-fx-padding: 1 5;" text="New Appointment" />
+          </children>
+        </HBox>
+        <Button id="weekNextActivated" mnemonicParsing="false" onAction="#weekNextActivated" style="-fx-padding: 2 7;" text="&gt;" textAlignment="CENTER" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0" />
+        <Button id="weekPrevActivated" mnemonicParsing="false" onAction="#weekPrevActivated" style="-fx-padding: 2 7;" text="&lt;" textAlignment="CENTER" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="appointmentPane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+            <ScrollPane layoutX="10.0" prefViewportHeight="600.0" prefViewportWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <HBox prefWidth="780.0" spacing="10.0">
+                     <children>
+                    <VBox id="VBox" alignment="TOP_LEFT" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <children>
+                        <Label text="Title">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                        <TextField fx:id="apptTitleBox" maxWidth="300.0" prefWidth="200.0" />
+                        <Label text="Type">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                        <ComboBox fx:id="apptTypeBox">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                              <String fx:value="Item 2" />
+                              <String fx:value="Item 3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label text="Customer">
+                          <VBox.margin>
+                            <Insets top="10.0" fx:id="x3" />
+                          </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="apptCustomerBox">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                              <String fx:value="Item 2" />
+                              <String fx:value="Item 3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                              <HBox prefWidth="200.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#editCustomerActivated" style="-fx-padding: 0 5;" text="Edit" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                    <Button graphicTextGap="0.0" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" onAction="#newCustomerActivated" style="-fx-padding: 0 5;" text="New" textAlignment="CENTER" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </HBox>
+                        <Label text="Date">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="apptDateBox" />
+                              <Label layoutX="10.0" layoutY="196.0" text="Start Time">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <ComboBox fx:id="apptHourBox" prefWidth="60.0" />
+                                    <Label alignment="CENTER" prefHeight="25.0" style="-fx-padding: 0 2;" text=":" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="apptMinuteBox" layoutX="10.0" layoutY="10.0" prefWidth="60.0" />
+                                    <ComboBox fx:id="apptPeriodBox" layoutX="68.0" layoutY="10.0" prefWidth="68.0">
+                                       <HBox.margin>
+                                          <Insets left="6.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                              <Label text="Length">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <TextField fx:id="apptLengthBox" maxWidth="300.0" prefWidth="80.0" />
+                                    <ComboBox fx:id="apptLengthTypeBox" onAction="#apptLengthTypeChanged" />
+                                 </children>
+                              </HBox>
+                      </children>
+                    </VBox>
+                        <VBox maxWidth="300.0" minWidth="300.0" prefWidth="300.0">
+                           <children>
+                        <Label text="Description">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="apptDescriptionBox" prefHeight="100.0" prefWidth="300.0" wrapText="true" />
+                        <Label text="Location">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="apptLocationBox" prefHeight="100.0" prefWidth="300.0" wrapText="true" />
+                              <Label text="Contact">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="apptContactBox" prefHeight="100.0" prefWidth="300.0" wrapText="true" />
+                        <Label text="URL">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                        <TextField fx:id="apptUrlBox" maxWidth="300.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER_RIGHT" spacing="5.0">
+                                 <children>
+                                    <Button layoutX="212.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteButtonActivated" text="Delete" />
+                                    <Button mnemonicParsing="false" onAction="#saveButtonActivated" text="Save" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelButtonActivated" text="Cancel" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label fx:id="errorBox" textFill="RED" wrapText="true" />
+                     </children>
+                  </HBox>
+               </content>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+            </ScrollPane>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

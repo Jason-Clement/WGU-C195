@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c195.FXMLCustomersController">
+  <children>
+  <AnchorPane fx:id="customerListPane" maxWidth="240.0" minHeight="0.0" minWidth="240.0" prefWidth="240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <children>
+      <CheckBox fx:id="showInactiveCheckbox" allowIndeterminate="false" indeterminate="false" mnemonicParsing="false" onAction="#showInactiveChanged" selected="false" text="Show Inactive" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+      <Button fx:id="addNewButton" mnemonicParsing="false" onAction="#addNewButtonActivated" style="-fx-padding: 2 8;" text="Add New" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="2.0" />
+      <ListView fx:id="customerList" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+    </children>
+  </AnchorPane>
+  <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <children>
+      <Label fx:id="errorBox" alignment="TOP_LEFT" prefHeight="400.0" prefWidth="200.0" style="-fx-text-fill: #FF0000;" text="" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <FlowPane maxWidth="200.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" rowValignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0">
+        <children>
+          <Label text="Name">
+            <FlowPane.margin>
+              <Insets top="10.0" fx:id="x1" />
+            </FlowPane.margin>
+          </Label>
+          <TextField fx:id="customerNameBox" prefWidth="200.0" />
+          <Label text="Address" FlowPane.margin="$x1" />
+          <TextField id="customerNameBox" fx:id="addressBox" prefWidth="200.0" />
+          <TextField id="customerNameBox" fx:id="address2Box" prefWidth="200.0" />
+          <Label text="City" FlowPane.margin="$x1" />
+          <TextField id="customerNameBox" fx:id="cityBox" prefWidth="200.0" />
+          <Label text="Postal Code" FlowPane.margin="$x1" />
+          <TextField id="customerNameBox" fx:id="postalCodeBox" prefWidth="200.0" />
+          <Label text="Country" FlowPane.margin="$x1" />
+          <TextField id="customerNameBox" fx:id="countryBox" prefWidth="200.0" />
+          <Label text="Phone" FlowPane.margin="$x1" />
+          <TextField id="customerNameBox" fx:id="phoneBox" prefWidth="200.0" />
+          <CheckBox fx:id="activeCheckbox" mnemonicParsing="false" text="Active" FlowPane.margin="$x1" />
+          <FlowPane alignment="CENTER_RIGHT" columnHalignment="RIGHT" prefHeight="22.0" prefWidth="200.0" FlowPane.margin="$x1">
+            <children>
+              <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonActivated" text="Save">
+                <FlowPane.margin>
+                  <Insets right="10.0" />
+                </FlowPane.margin>
+              </Button>
+              <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonActivated" text="Cancel" />
+            </children>
+          </FlowPane>
+        </children>
+      </FlowPane>
+    </children>
+  </AnchorPane>
+  </children>
+</AnchorPane>

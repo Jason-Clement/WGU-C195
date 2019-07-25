@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="reports" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c195.FXMLReportsController">
+    <stylesheets>
+        <URL value="@FXMLReports.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="8.0" layoutY="38.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#appointmentsByMonthActivated" prefWidth="200.0" styleClass="link" text="Appointment Count per Month">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#appointmentsPerUserActivated" prefWidth="200.0" styleClass="link" text="Appointments per User">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <VBox fx:id="usersBoxWrapper" prefWidth="200.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="User" />
+                  <ComboBox fx:id="usersBox" maxWidth="170.0" onAction="#userChanged" prefWidth="170.0" />
+                  <CheckBox fx:id="userUpcomingOnlyCheckbox" mnemonicParsing="false" onAction="#userChanged" selected="true" text="Upcoming Only">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </VBox>
+            <Separator layoutX="10.0" layoutY="35.0" prefWidth="200.0" />
+            <Button layoutX="10.0" layoutY="45.0" mnemonicParsing="false" onAction="#appointmentsPerCustomerActivated" prefWidth="200.0" styleClass="link" text="Appointments per Customer">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <VBox fx:id="customersBoxWrapper" layoutX="10.0" layoutY="63.0" prefWidth="200.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="Customer" />
+                  <ComboBox fx:id="customersBox" maxWidth="170.0" onAction="#customerChanged" prefWidth="170.0" />
+                  <CheckBox fx:id="customerUpcomingOnlyCheckbox" mnemonicParsing="false" onAction="#customerChanged" selected="true" text="Upcoming Only">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </VBox>
+            <Separator layoutX="10.0" layoutY="63.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="right-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="headingBox" prefHeight="35.0" styleClass="heading" text="Heading" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextArea fx:id="reportTextArea" styleClass="reportTextArea" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+            <TableView id="month-grid" fx:id="appointmentsByMonthGrid" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+               <columns>
+                  <TableColumn fx:id="appointmentsByMonthYearColumn" prefWidth="100.0" text="Year" />
+                  <TableColumn fx:id="appointmentsByMonthMonth1Column" maxWidth="60.0" prefWidth="40.0" text="Jan" />
+                  <TableColumn fx:id="appointmentsByMonthMonth2Column" maxWidth="60.0" prefWidth="40.0" text="Feb" />
+                  <TableColumn fx:id="appointmentsByMonthMonth3Column" maxWidth="60.0" prefWidth="40.0" text="Mar" />
+                  <TableColumn fx:id="appointmentsByMonthMonth4Column" maxWidth="60.0" prefWidth="40.0" text="Apr" />
+                  <TableColumn fx:id="appointmentsByMonthMonth5Column" maxWidth="60.0" prefWidth="40.0" text="May" />
+                  <TableColumn fx:id="appointmentsByMonthMonth6Column" maxWidth="60.0" prefWidth="40.0" text="Jun" />
+                  <TableColumn fx:id="appointmentsByMonthMonth7Column" maxWidth="60.0" prefWidth="40.0" text="Jul" />
+                  <TableColumn fx:id="appointmentsByMonthMonth8Column" maxWidth="60.0" prefWidth="40.0" text="Aug" />
+                  <TableColumn fx:id="appointmentsByMonthMonth9Column" maxWidth="60.0" prefWidth="40.0" text="Sep" />
+                  <TableColumn fx:id="appointmentsByMonthMonth10Column" maxWidth="60.0" prefWidth="40.0" text="Oct" />
+                  <TableColumn fx:id="appointmentsByMonthMonth11Column" maxWidth="60.0" prefWidth="40.0" text="Nov" />
+                  <TableColumn fx:id="appointmentsByMonthMonth12Column" maxWidth="60.0" prefWidth="40.0" text="Dec" />
+               </columns></TableView>
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</AnchorPane>

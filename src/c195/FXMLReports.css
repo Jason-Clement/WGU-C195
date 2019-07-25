@@ -1,0 +1,26 @@
+.reports {
+
+}
+
+.link {
+    -fx-background-color: transparent;
+    -fx-padding: 4 8;
+    -fx-alignment: bottom-left;
+}
+
+.link:hover {
+    -fx-background-color: white;
+}
+
+.heading {
+    -fx-background-color: white;
+}
+
+.reportTextArea {
+    -fx-background-color: white;
+    -fx-border-style: none;
+}
+
+#month-grid .table-column {
+  -fx-alignment: center;
+}
